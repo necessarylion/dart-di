@@ -37,6 +37,15 @@ void main() {
       expect(animal.duck.walk.start(), 'walking');
       expect(animal.duck.fly?.start(), 'flying');
       expect(animal.duck.swim.start(), 'swimming');
+
+      Animal animal2 = Animal(
+        Dog(Walk()),
+        Fish(Swim()),
+        Bird(Fly()),
+        Duck(Swim(), walk: Walk(), fly: Fly()),
+      );
+
+      expect(animal.toString(), animal2.toString());
     });
   });
 }
