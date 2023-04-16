@@ -17,3 +17,4 @@ jobs:
           flutter: false
           suppressBuildRunner: true
           testRunOnly: true
+          dryRunOnly: true
