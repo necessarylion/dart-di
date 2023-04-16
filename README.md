@@ -4,11 +4,11 @@
 import 'package:ezy_di/ezy_di.dart';
 
 final injector = Injector();
-Animal animal = injector.get<Animal>();
+Animals animals = injector.get<Animals>();
 
 // is equal to 
 
-Animal animal = Animal(
+Animals animals = Animals(
   Dog(Walk()), 
   Fish(Swim()), 
   Bird(Fly()), 
@@ -27,7 +27,7 @@ Injector itselft is smart enough to get required dependencies and inject to the 
 ### Full Example
 
 ```dart
-class Animal {
+class Animals {
   final Dog dog;
   final Fish fish;
   final Bird bird;
@@ -84,9 +84,9 @@ class Walk {
 
 void main() {
     final injector = Injector();
-    Animal animal = injector.get<Animal>();
-    animal.bird.fly.start() // flying
-    animal.fish.swim.start() // swimming
+    Animals animals = injector.get<Animals>();
+    animals.bird.fly.start() // flying
+    animals.fish.swim.start() // swimming
 }
 
 ```
