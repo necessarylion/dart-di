@@ -1,6 +1,8 @@
 ## Dependency Injection
 
 ```dart
+import 'package:ezy_di/ezy_di.dart';
+
 final injector = Injector();
 Animal animal = injector.get<Animal>();
 
