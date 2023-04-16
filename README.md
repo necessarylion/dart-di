@@ -1,8 +1,8 @@
 ## Dependency Injection
 
 ```dart
-  final injector = Injector();
-  Animal animal = injector.get<Animal>();
+final injector = Injector();
+Animal animal = injector.get<Animal>();
 ```
 
 ### Full Example
