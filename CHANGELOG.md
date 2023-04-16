@@ -1,4 +1,8 @@
-## 0.0.4
+## 0.0.6
+
+- Update readme
+
+## 0.0.5
 
 - Refactor code
 
