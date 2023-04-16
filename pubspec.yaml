@@ -1,6 +1,6 @@
 name: ezy_di
 description: Dependency Injection Tools for Dart
-version: 0.0.4
+version: 0.0.5
 repository: https://github.com/necessarylion/ezy-di
 homepage: https://github.com/necessarylion/ezy-di
 

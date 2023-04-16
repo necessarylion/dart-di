@@ -1,3 +1,6 @@
-library dependency_injection;
+library ezy_di;
 
-export 'src/di_base.dart';
+import 'dart:mirrors';
+
+part 'src/di_base.dart';
+part 'src/di_singleton.dart';
