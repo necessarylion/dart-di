@@ -3,7 +3,24 @@
 ```dart
 final injector = Injector();
 Animal animal = injector.get<Animal>();
+
+// is equal to 
+
+Animal animal = Animal(
+  Dog(Walk()), 
+  Fish(Swim()), 
+  Bird(Fly()), 
+  Duck(
+    Swim(), 
+    walk: Walk(), 
+    fly: Fly(),
+  ),
+);
+
 ```
+
+As you can see in example you do not need to add dependencies to the injector. 
+Injector itselft is smart enough to get required dependencies and inject to the requested class.
 
 ### Full Example
 
