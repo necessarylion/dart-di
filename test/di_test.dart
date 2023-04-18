@@ -2,26 +2,23 @@ import 'package:ezy_di/ezy_di.dart';
 import 'package:test/test.dart';
 
 void main() {
+  final injector = Injector();
   group('Injector Test', () {
     test('Bird', () {
-      final injector = Injector();
       Bird bird = injector.get<Bird>();
       expect(bird.fly.start(), 'flying');
     });
 
     test('Dog', () {
-      final injector = Injector();
       Dog dog = injector.get<Dog>();
       expect(dog.walk.start(), 'walking');
     });
 
     test('Fish', () {
-      final injector = Injector();
       Fish fish = injector.get<Fish>();
       expect(fish.swim.start(), 'swimming');
     });
     test('Duck', () {
-      final injector = Injector();
       Duck duck = injector.get<Duck>();
       expect(duck.swim.start(), 'swimming');
       expect(duck.fly?.start(), 'flying');
@@ -29,7 +26,6 @@ void main() {
     });
 
     test('Animal', () {
-      final injector = Injector();
       Animal animal = injector.get<Animal>();
       expect(animal.fish.swim.start(), 'swimming');
       expect(animal.bird.fly.start(), 'flying');
@@ -38,14 +34,10 @@ void main() {
       expect(animal.duck.fly?.start(), 'flying');
       expect(animal.duck.swim.start(), 'swimming');
 
-      Animal animal2 = Animal(
-        Dog(Walk()),
-        Fish(Swim()),
-        Bird(Fly()),
-        Duck(Swim(), walk: Walk(), fly: Fly()),
-      );
-
-      expect(animal.toString(), animal2.toString());
+      // checking singleton work
+      expect(animal.dog.walk, animal.duck.walk);
+      expect(animal.fish.swim, animal.duck.swim);
+      expect(animal.bird.fly != animal.duck.fly, true);
     });
   });
 }
@@ -81,7 +73,6 @@ class Fish {
   Fish(this.swim);
 }
 
-@Singleton()
 class Fly {
   start() {
     return "flying";

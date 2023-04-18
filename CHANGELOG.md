@@ -1,3 +1,7 @@
+## 0.0.7
+
+- Remove Injector as singleton
+
 ## 0.0.6
 
 - Update readme

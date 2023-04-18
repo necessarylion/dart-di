@@ -1,15 +1,7 @@
 part of ezy_di;
 
 class Injector {
-  static final Injector _singleton = Injector._internal();
-
   Map<String, dynamic> instances = {};
-
-  factory Injector() {
-    return _singleton;
-  }
-
-  Injector._internal();
 
   get<T>() {
     return _getClass(T);
